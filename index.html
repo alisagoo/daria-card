@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Визитка - Шамехо Дарья</title>
+    <style>
+        /* CSS - оформление */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e3f2fd; /* Нежно-голубой фон */
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .card {
+            background-color: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 480px; /* Чуть шире, чтобы всё влезло */
+            width: 100%;
+        }
+        .avatar {
+            width: 100px;
+            height: 100px;
+            background-color: #90caf9;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 50px;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 5px;
+            font-size: 26px;
+        }
+        .subtitle {
+            color: #1976d2;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+        .services {
+            text-align: left;
+            background-color: #f5f9ff;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            border-left: 5px solid #1976d2;
+        }
+        .services h2 {
+            font-size: 18px;
+            color: #333;
+            margin-top: 0;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        .services ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .services li {
+            padding: 10px 0;
+            color: #444;
+            font-size: 15px;
+            border-bottom: 1px solid #e0e0e0;
+            line-height: 1.4;
+        }
+        .services li:last-child {
+            border-bottom: none;
+        }
+        .contact-info {
+            margin-bottom: 20px;
+            font-size: 16px;
+            color: #555;
+        }
+        .contact-info div {
+            margin: 10px 0;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #1976d2;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            margin: 5px;
+            transition: background-color 0.3s;
+            font-size: 15px;
+        }
+        .btn:hover {
+            background-color: #1565c0;
+        }
+        .btn-phone {
+            background-color: #43a047;
+        }
+        .btn-phone:hover {
+            background-color: #2e7d32;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="avatar">👩‍💼</div>
+        
+        <h1>Шамехо Дарья</h1>
+        <p class="subtitle">Финансовый и digital-консультант</p>
+        
+        <div class="services">
+            <h2>Мои услуги и компетенции:</h2>
+            <ul>
+                <li>🛡️ <strong>Страхование:</strong> полный спектр страховых продуктов</li>
+                <li>🏠 <strong>Недвижимость:</strong> подбор и покупка жилья</li>
+                <li>🏦 <strong>Финансы:</strong> одобрение ипотеки и расчет субсидированных ставок</li>
+                <li>💻 <strong>Digital:</strong> создание стильных сайтов-визиток</li>
+                <li>📄 <strong>HR-помощь:</strong> грамотное редактирование резюме</li>
+                <li>📍 <strong>Санкт-Петербург:</strong> консьерж-помощь и консультации по городу</li>
+            </ul>
+        </div>
+
+        <div class="contact-info">
+            <div>📞 <strong>+7 909 771-61-67</strong></div>
+            <div>✉️ <strong>andreeva1641@gmail.com</strong></div>
+        </div>
+
+        <!-- Кнопки, которые работают при нажатии на телефоне -->
+        <a href="tel:+79097716167" class="btn btn-phone">Позвонить</a>
+        <a href="mailto:andreeva1641@gmail.com" class="btn">Написать</a>
+    </div>
+
+</body>
+</html>
