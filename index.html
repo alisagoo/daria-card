@@ -25,16 +25,15 @@
             max-width: 480px; /* Чуть шире, чтобы всё влезло */
             width: 100%;
         }
-        .avatar {
-            width: 100px;
-            height: 100px;
-            background-color: #90caf9;
+        .avatar-img {
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
+            object-fit: cover;
             margin: 0 auto 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 50px;
+            display: block;
+            border: 3px solid #1976d2;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
         h1 {
             color: #333;
@@ -111,7 +110,7 @@
 <body>
 
     <div class="card">
-        <div class="avatar">👩‍💼</div>
+        <img src="IMG_6565.jpg" alt="Дарья" class="avatar-img">
         
         <h1>Шамехо Дарья</h1>
         <p class="subtitle">Финансовый и digital-консультант</p>
