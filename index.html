@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Визитка - Шамехо Дарья</title>
     <style>
-        /* CSS - оформление */
+        /* --- ОСНОВНОЕ ОФОРМЛЕНИЕ --- */
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #e3f2fd; /* Нежно-голубой фон */
+            background-color: #e3f2fd;
             margin: 0;
             padding: 20px;
             display: flex;
@@ -22,9 +22,11 @@
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             text-align: center;
-            max-width: 480px; /* Чуть шире, чтобы всё влезло */
+            max-width: 480px;
             width: 100%;
         }
+        
+        /* --- ФОТО --- */
         .avatar-img {
             width: 120px;
             height: 120px;
@@ -35,6 +37,7 @@
             border: 3px solid #1976d2;
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
+
         h1 {
             color: #333;
             margin-bottom: 5px;
@@ -46,10 +49,12 @@
             font-weight: bold;
             margin-bottom: 25px;
         }
+
+        /* --- БЛОК УСЛУГ (АККОРДЕОН) --- */
         .services {
             text-align: left;
             background-color: #f5f9ff;
-            padding: 20px;
+            padding: 15px 20px;
             border-radius: 12px;
             margin-bottom: 25px;
             border-left: 5px solid #1976d2;
@@ -57,25 +62,57 @@
         .services h2 {
             font-size: 18px;
             color: #333;
-            margin-top: 0;
-            margin-bottom: 15px;
+            margin-top: 5px;
+            margin-bottom: 10px;
             text-align: center;
         }
-        .services ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
+        .service-item {
+            border-bottom: 1px solid #d0e0f0;
+            cursor: pointer;
         }
-        .services li {
-            padding: 10px 0;
-            color: #444;
-            font-size: 15px;
-            border-bottom: 1px solid #e0e0e0;
-            line-height: 1.4;
-        }
-        .services li:last-child {
+        .service-item:last-child {
             border-bottom: none;
         }
+        .service-title {
+            padding: 12px 0;
+            font-size: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #444;
+            transition: color 0.3s;
+        }
+        .service-title:hover {
+            color: #1976d2;
+        }
+        .service-title span {
+            font-size: 20px;
+            color: #1976d2;
+            font-weight: bold;
+        }
+        .service-details {
+            display: none;
+            padding: 10px 15px;
+            font-size: 14px;
+            color: #555;
+            background-color: #ffffff;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .service-details p {
+            margin: 0 0 5px 0;
+            font-weight: bold;
+        }
+        .service-details ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        .service-details li {
+            padding: 3px 0;
+        }
+
+        /* --- КОНТАКТЫ И КНОПКИ --- */
         .contact-info {
             margin-bottom: 20px;
             font-size: 16px;
@@ -110,6 +147,7 @@
 <body>
 
     <div class="card">
+        <!-- Фотография -->
         <img src="photo.jpeg" alt="Дарья" class="avatar-img">
         
         <h1>Шамехо Дарья</h1>
@@ -117,14 +155,96 @@
         
         <div class="services">
             <h2>Мои услуги и компетенции:</h2>
-            <ul>
-                <li>🛡️ <strong>Страхование:</strong> полный спектр страховых продуктов</li>
-                <li>🏠 <strong>Недвижимость:</strong> подбор и покупка жилья</li>
-                <li>🏦 <strong>Финансы:</strong> одобрение ипотеки и расчет субсидированных ставок</li>
-                <li>💻 <strong>Digital:</strong> создание стильных сайтов-визиток</li>
-                <li>📄 <strong>HR-помощь:</strong> грамотное редактирование резюме</li>
-                <li>📍 <strong>Санкт-Петербург:</strong> консьерж-помощь и консультации по городу</li>
-            </ul>
+            
+            <!-- Услуга 1 -->
+            <div class="service-item" onclick="toggleDetails('details1')">
+                <div class="service-title">🛡️ <strong>Страхование</strong> <span>+</span></div>
+                <div class="service-details" id="details1">
+                    <p>Полный спектр страховых продуктов:</p>
+                    <ul>
+                        <li>ОСАГО и КАСКО</li>
+                        <li>Ипотечное страхование</li>
+                        <li>Страхование жизни и здоровья</li>
+                        <li>Страхование имущества</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Услуга 2 -->
+            <div class="service-item" onclick="toggleDetails('details2')">
+                <div class="service-title">🏠 <strong>Недвижимость</strong> <span>+</span></div>
+                <div class="service-details" id="details2">
+                    <p>Помощь в покупке и подборе:</p>
+                    <ul>
+                        <li>Подбор жилья (новостройки и вторичка)</li>
+                        <li>Сопровождение сделки</li>
+                        <li>Консультация по рынку недвижимости</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Услуга 3 -->
+            <div class="service-item" onclick="toggleDetails('details3')">
+                <div class="service-title">🏦 <strong>Финансы</strong> <span>+</span></div>
+                <div class="service-details" id="details3">
+                    <p>Работа с банками и субсидиями:</p>
+                    <ul>
+                        <li>Одобрение ипотеки (включая сложные случаи)</li>
+                        <li>Расчет субсидированных ставок</li>
+                        <li>Помощь в рефинансировании</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Услуга 4 -->
+            <div class="service-item" onclick="toggleDetails('details4')">
+                <div class="service-title">⚖️ <strong>Юридическая помощь</strong> <span>+</span></div>
+                <div class="service-details" id="details4">
+                    <p>Защита ваших интересов:</p>
+                    <ul>
+                        <li>Составление досудебных претензий</li>
+                        <li>Защита прав потребителей</li>
+                        <li>Помощь в оспаривании штрафов</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Услуга 5 -->
+            <div class="service-item" onclick="toggleDetails('details5')">
+                <div class="service-title">💻 <strong>Digital</strong> <span>+</span></div>
+                <div class="service-details" id="details5">
+                    <p>Создание и поддержка:</p>
+                    <ul>
+                        <li>Разработка сайтов-визиток</li>
+                        <li>Базовая настройка сайта</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Услуга 6 -->
+            <div class="service-item" onclick="toggleDetails('details6')">
+                <div class="service-title">📄 <strong>HR-помощь</strong> <span>+</span></div>
+                <div class="service-details" id="details6">
+                    <p>Помощь в трудоустройстве:</p>
+                    <ul>
+                        <li>Редактирование и составление резюме</li>
+                        <li>Подготовка к собеседованию</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Услуга 7 -->
+            <div class="service-item" onclick="toggleDetails('details7')">
+                <div class="service-title">📍 <strong>Санкт-Петербург</strong> <span>+</span></div>
+                <div class="service-details" id="details7">
+                    <p>Ваш личный помощник в городе:</p>
+                    <ul>
+                        <li>Помощь в решении бытовых вопросов</li>
+                        <li>Консультации по городу и локациям</li>
+                    </ul>
+                </div>
+            </div>
+
         </div>
 
         <div class="contact-info">
@@ -132,10 +252,21 @@
             <div>✉️ <strong>andreeva1641@gmail.com</strong></div>
         </div>
 
-        <!-- Кнопки, которые работают при нажатии на телефоне -->
         <a href="tel:+79097716167" class="btn btn-phone">Позвонить</a>
         <a href="mailto:andreeva1641@gmail.com" class="btn">Написать</a>
     </div>
+
+    <!-- СКРИПТ ДЛЯ РАБОТЫ КЛИКОВ -->
+    <script>
+        function toggleDetails(id) {
+            var details = document.getElementById(id);
+            if (details.style.display === "block") {
+                details.style.display = "none";
+            } else {
+                details.style.display = "block";
+            }
+        }
+    </script>
 
 </body>
 </html>
